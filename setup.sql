@@ -9,14 +9,14 @@ create table user(
     address char(100) not null
 );
 
-create table product(
+create table product( --error
     id int auto_increment not null primary key,
     name char(30) not null,
     bug char(50) not null,
     type int not null,
     price int not null,
     expiration date not null,
-    about varchar(65500) not null,
+    about varchar(21844) not null,
     stock int not null
 );
 
@@ -28,15 +28,15 @@ create table productImage(
     updateDate date not null
 );
 
-create table feedback(
+create table feedback( --error
     id int auto_increment not null primary key,
     productID int not null,
     eval int not null,
-    comment varchar(65500),
+    comment varchar(21844),
     updateDate date not null
 );
 
-create table allergy(
+create table allergy( -- error
     id int auto_increment not null primary key,
     productID int not null,
     egg int default 0,
@@ -67,12 +67,12 @@ create table sales(
     sold date not null
 );
 
-create table cart(
+create table cart( -- error
     id int auto_increment not null primary key,
     productID int not null,
     userID int not null,
-    num int not null
-    added date not null
+    num int not null,
+    added date not null,
     updateDate date not null
 );
 
@@ -80,4 +80,12 @@ create table logined(
     id int auto_increment not null primary key,
     userID int not null,
     loginedDate date not null
+);
+
+insert into user(name,Email,icon,password,address) values(
+    "test","sample@gmail.com","https://pakutaso.cdn.rabify.me/shared/img/thumb/partyPAUI1755.jpg.webp?d=1420","12345678","静岡県浜松市北区初生町1150"
+);
+
+insert into product(name,bug,type,price,expiration,stock,about,) values(
+
 );
