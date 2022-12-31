@@ -86,6 +86,6 @@ insert into user(name,Email,icon,password,address) values(
     "test","sample@gmail.com","https://pakutaso.cdn.rabify.me/shared/img/thumb/partyPAUI1755.jpg.webp?d=1420","12345678","静岡県浜松市北区初生町1150"
 );
 
-insert into product(name,bug,type,price,expiration,stock,about,) values(
-    " "," ",0,0," ",100," "
+insert into product(name,bug,type,price,expiration,about,stock) values(
+    " "," ",0,0,"2024-01-01"," ",100
 );
