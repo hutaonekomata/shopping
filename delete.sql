@@ -1,0 +1,10 @@
+use ei2031;
+drop table user;
+drop table product;
+drop table productImage;
+drop table feedback;
+drop table allergy;
+drop table bookmark;
+drop table sales;
+drop table cart;
+drop table logined;
