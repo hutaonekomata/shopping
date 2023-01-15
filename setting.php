@@ -8,47 +8,32 @@ $stock=$_POST["stock"];
 $about=$_POST["about"];
 $from=$_POST["from"];
 
+session_start();
 
-$dsn='mysql:host=localhost;dbname=ei2031;charset=utf8';
-$user='ei2031';
-$password='ei2031@alumni.hamako-ths.ed.jp';
-
-try{
-    $db=new PDO($dsn,$user,$password);
-    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
-
-    $stmt=$db->prepare(
-        "
-        insert
-        into
-        product(name,bug,type,price,expiration,about,stock) 
-        values
-        (
-            :name,
-            :bug,
-            :type,
-            :price,
-            :expiration,
-            :about,
-            :stock
-        );
-        "
-    );
-
-    $stmt->bindParam(':name',$name,PDO::PARAM_STR);
-    $stmt->bindParam(':bug',$bug,PDO::PARAM_STR);
-    $stmt->bindParam(':type',$types,PDO::PARAM_INT);
-    $stmt->bindParam(':price',$price,PDO::PARAM_INT);
-    $stmt->bindParam(':expiration',$expiration,PDO::PARAM_STR);
-    $stmt->bindParam(':about',$about,PDO::PARAM_STR);
-    $stmt->bindParam(':stock',$stock,PDO::PARAM_INT);
-
-    $stmt->execute();
-
-    header('Location : setting.html');
-    exit();
-}catch(PDOException $e){
-    die('error:'.$e->getMessage());
+$mysqli = new mysqli("localhost","ei2031","ei2031@alumni.hamako-ths.ed.jp","ei2031");
+if(mysqli_connect_errno()){
+    die("MySQL connection error: " . mysqli_connect_error());
 }
+
+$sql_insert = "
+    insert
+    into
+    product(`name`,`bug`,`type`,`price`,`expiration`,`about`,`stock`) 
+    values
+    (
+        "."$name".",
+        "."$bug".",
+        "."$type".",
+        "."$price".",
+        "."$expiration".",
+        "."$about".",
+        "."$stock"."
+    );
+";
+
+if(!($result = $mysqli->query($sql_insert))){
+    die($mysql->error);
+}
+
 include "verif.html";
 ?>
