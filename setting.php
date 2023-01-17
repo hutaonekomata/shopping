@@ -1,39 +1,58 @@
 <?php
-$name=$_POST["name"];
-$bug=$_POST["bug"];
-$types=$_POST["types"];
-$price=$_POST["price"];
-$expiration=$_POST["expiration"];
-$stock=$_POST["stock"];
-$about=$_POST["about"];
-$from=$_POST["from"];
+$name=$_GET["name"];
+$bug=$_GET["bug"];
+$types=$_GET["types"];
+$price=$_GET["price"];
+$expiration=$_GET["expiration"];
+$stock=$_GET["stock"];
+$about=$_GET["about"];
+$from=$_GET["from"];
 
-session_start();
+try{
+$pdo_config = 'mysql:host=localhost;dbname=ei2031';
 
-$mysqli = new mysqli("localhost","ei2031","ei2031@alumni.hamako-ths.ed.jp","ei2031");
-if(mysqli_connect_errno()){
-    die("MySQL connection error: " . mysqli_connect_error());
-}
+$user='ei2031';
+$password='ei2031@alumni.hamako-ths.ed.jp';
+$option='[PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]';
 
-$sql_insert = "
-    insert
-    into
-    product(`name`,`bug`,`type`,`price`,`expiration`,`about`,`stock`) 
-    values
+$pdo = new PDO($pdo_config,$user,$password);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$sql_insert = '
+    INSERT INTO product (`name`,`bug`,`type`,`price`,`expiration`,`about`,`stock`) VALUES
     (
-        "."$name".",
-        "."$bug".",
-        "."$type".",
-        "."$price".",
-        "."$expiration".",
-        "."$about".",
-        "."$stock"."
+        :name,
+        :bug,
+        :type,
+        :price,
+        :expiration,
+        :about,
+        :stock
     );
-";
+';
 
-if(!($result = $mysqli->query($sql_insert))){
-    die($mysql->error);
+$stmt = $pdo->prepare($sql_insert);
+$stmt->bindValue(':name','yama');
+$stmt->bindValue(':bug','yama');
+$stmt->bindValue(':type',0);
+$stmt->bindValue(':price',0);
+$stmt->bindValue(':expiration','2024-01-01');
+$stmt->bindValue(':about','yama');
+$stmt->bindValue(':stock',10);
+
+$stmt->execute();
+
+$test = $pdo->prepare('select * from product;');
+$ret = $test->execute();
+
+foreach($ret as $row){
+	echo $row['name'];
 }
 
-include "verif.html";
+echo '!!';
+
+$pdo=null;
+}catch(PDOException $e){
+echo $e->getMessage();
+}
 ?>
