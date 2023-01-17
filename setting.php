@@ -27,18 +27,20 @@ $sql_insert = '
         :price,
         :expiration,
         :about,
-        :stock
+        :stock,
+        :from
     );
 ';
 
 $stmt = $pdo->prepare($sql_insert);
-$stmt->bindValue(':name','yama');
-$stmt->bindValue(':bug','yama');
-$stmt->bindValue(':type',0);
-$stmt->bindValue(':price',0);
-$stmt->bindValue(':expiration','2024-01-01');
-$stmt->bindValue(':about','yama');
-$stmt->bindValue(':stock',10);
+$stmt->bindValue(':name',$name);
+$stmt->bindValue(':bug',$bug);
+$stmt->bindValue(':type',$types);
+$stmt->bindValue(':price',$price);
+$stmt->bindValue(':expiration',$expiration);
+$stmt->bindValue(':about',$about);
+$stmt->bindValue(':stock',$stock);
+$stmt->bindValue(':from',$from);
 
 $stmt->execute();
 

@@ -17,7 +17,8 @@ create table product(
     `price` int not null,
     `expiration` date not null,
     `about` varchar(500) not null,
-    `stock` int not null
+    `stock` int not null,
+    `from` varchar(500) not null
 );
 
 create table productImage(
