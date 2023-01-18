@@ -19,7 +19,7 @@ $pdo = new PDO($pdo_config,$user,$password);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $sql_insert = '
-    INSERT INTO product (`name`,`bug`,`type`,`price`,`expiration`,`about`,`stock`) VALUES
+    INSERT INTO product (`name`,`bug`,`type`,`price`,`expiration`,`about`,`stock`,`from`) VALUES
     (
         :name,
         :bug,
@@ -51,9 +51,9 @@ foreach($ret as $row){
 	echo $row['name'];
 }
 
-echo '!!';
-
 $pdo=null;
+header('Location: https://alumni.hamako-ths.ed.jp/~ei2031/shopping/setting.html');
+exit();
 }catch(PDOException $e){
 echo $e->getMessage();
 }
