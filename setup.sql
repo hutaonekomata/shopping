@@ -17,7 +17,8 @@ create table product(
     `price` int not null,
     `expiration` date not null,
     `about` varchar(500) not null,
-    `stock` int not null
+    `stock` int not null,
+    `from` varchar(500) not null
 );
 
 create table productImage(
@@ -86,6 +87,6 @@ insert into user(name,Email,icon,password,address) values(
     "test","sample@gmail.com","https://pakutaso.cdn.rabify.me/shared/img/thumb/partyPAUI1755.jpg.webp?d=1420","12345678","静岡県浜松市北区初生町1150"
 );
 
-insert into product(name,bug,type,price,expiration,about,stock) values(
-    " "," ",0,0,"2024-01-01"," ",100
+insert into product(name,bug,type,price,expiration,about,stock,`from`) values(
+    " "," ",0,0,"2024-01-01"," ",100,"test"
 );
