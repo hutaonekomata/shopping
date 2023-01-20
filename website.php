@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,17 @@
   <title>昆虫食専門サイト</title>
   <link rel="stylesheet" href="website.css">
 </head>
+
 <body>
   <header>
     <h1 class="title">昆虫食専門店(仮)</h1>
     <div class="kensaku">
-      <img src="image/虫眼鏡.jpg" height="60px">
       <input type="text" id="search">
+      <button class="icon-button">
+        <img src="image/虫眼鏡.jpg" class="icon">
+      </button>
     </div>
   </header>
 </body>
+
 </html>
