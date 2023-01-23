@@ -42,5 +42,3 @@ exit();
 echo $e->getMessage();
 }
 ?>
-
-?>
