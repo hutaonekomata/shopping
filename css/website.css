@@ -2,41 +2,4 @@ html,
 body {
   margin: 0;
   padding: 0;
-  /* border: solid 1px #000; */
-}
-
-header {
-  background-color: rgb(36, 15, 10);
-  /* position: fixed; */
-  /* position: relative; */
-}
-
-.header-contents {
-  display: flex;
-  width: 90%;
-  margin: 0 auto;
-  justify-content: space-between;
-}
-
-h1 {
-  color: rgb(151, 221, 151);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin: 0;
-}
-
-.kensaku {
-  display: flex;
-  align-items: center;
-}
-
-#search {
-  height: 40px;
-  font-size: 90%;
-}
-
-.icon-button {
-  width: 40px;
-}
-.icon {
-  width: 40px;
 }

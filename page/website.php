@@ -10,17 +10,7 @@
 </head>
 
 <body>
-  <header>
-    <div class="header-contents">
-      <h1 class="title">昆虫食専門店(仮)</h1>
-      <div class="kensaku">
-        <input type="text" id="search">
-        <button class="icon-button">
-          <img src="../image/虫眼鏡.jpg" class="icon">
-        </button>
-      </div>
-    </div>
-  </header>
+  <?php require_once('./header.php') ?>
 </body>
 
 </html>
