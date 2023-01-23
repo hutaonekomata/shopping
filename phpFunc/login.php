@@ -31,8 +31,11 @@ if($res){
 }
 
 $pdo=null;
-if($judge)header('Location: https://alumni.hamako-ths.ed.jp/~ei2031/shopping/home.html');
-else {
+if($judge){
+    $kigen = time() + 30 * 24 * 3600;
+    setcookie('session_id', $data['id'], $kigen);
+    header('Location: https://alumni.hamako-ths.ed.jp/~ei2031/shopping/home.html');
+}else {
     $alert = "<script type='text/javascript'>alert('登録されたユーザーではありません');</script>";
     echo $alert;
     header('Location: https://alumni.hamako-ths.ed.jp/~ei2031/shopping/login.html');
