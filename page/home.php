@@ -15,6 +15,8 @@
   <h2>あなたへのおすすめ</h2>
   <section class="products-container">
 
+    <!-- phpでsql実行後、とってきた配列から必要な情報を抜き出し、ループで以下のhtmlに埋め込む -->
+
     <div class="product">
       <a class="product-link" href="./product.php 商品のidとか必要な情報をパラメータで渡す" target="_blank">
         <img class="product-img" src="../image/sample.png" alt="商品画像">
