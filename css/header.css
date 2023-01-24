@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 header {
   background-color: rgb(36, 15, 10);
 }
@@ -29,6 +33,7 @@ h1 {
 .icon-button {
   background-image: url("../image/虫眼鏡.jpg");
   background-size: contain;
+  color: rgba(0, 0, 0, 0);
 }
 .icon {
   width: 40px;
