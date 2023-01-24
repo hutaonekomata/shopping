@@ -21,25 +21,29 @@ $stmt->bindParam(':email',$email,PDO::PARAM_STR);
 
 $res = $stmt->execute();
 $judge=false;
+$message='';
 
 if($res){
    $data=$stmt->fetch();
-   var_dump($data); 
    if(!empty($data)&&$data['password'] == $pass){
-    $judhe=true;
+    $judge=true;
+   }else{
+    $message='fail';
    }
+}else{
+    $message='noUser';
 }
 
-$pdo=null;
-if($judge){
+if($judge==true){
     $kigen = time() + 30 * 24 * 3600;
     setcookie('session_id', $data['id'], $kigen);
-    header('Location: https://alumni.hamako-ths.ed.jp/~ei2031/shopping/home.html');
+    header('Location: https://alumni.hamako-ths.ed.jp/~ei2031/shopping/page/website.php');
 }else {
     $alert = "<script type='text/javascript'>alert('登録されたユーザーではありません');</script>";
     echo $alert;
-    header('Location: https://alumni.hamako-ths.ed.jp/~ei2031/shopping/login.html');
+    header('Location: https://alumni.hamako-ths.ed.jp/~ei2031/shopping/login.html?error='.$message);
 }
+$pdo=null;
 exit();
 }catch(PDOException $e){
 echo $e->getMessage();
