@@ -2,6 +2,10 @@ a {
   display: block;
 }
 
+* {
+  margin: 0;
+}
+
 main {
   width: 90%;
   margin: 0 auto;
@@ -25,6 +29,7 @@ main {
 .product-img {
   border: 1px black solid;
   margin: 15px;
+  margin-bottom: 0;
   min-height: max-content;
   max-height: 300px;
   background-color: white;
@@ -35,4 +40,10 @@ main {
   flex-direction: column;
   align-items: center;
   font-size: larger;
+}
+
+.product-title {
+  font-size: 1.5em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
 }

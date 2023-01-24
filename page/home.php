@@ -21,7 +21,7 @@
 
       <?php
       for ($i = 0; $i < 5; $i++) {
-        product_template('商品名', "", "../image/sample.png", "商品画像");
+        product_template('商品名', "http://king-cr.jp/special/seitokai_G/", "../image/sample.png", "商品画像");
       }
       ?>
 
