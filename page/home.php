@@ -14,7 +14,7 @@
   <?php require_once('../component/header.php')  ?>
 
   <main>
-    <h2>あなたへのおすすめ</h2>
+    <h2>商品一覧</h2>
     <section class="products-container">
 
       <!-- phpでsql実行後、とってきた配列から必要な情報を抜き出し、ループで以下のhtmlに埋め込む -->
@@ -25,16 +25,6 @@
       }
       ?>
 
-    </section>
-
-    <h2>今月の人気ランキング</h2>
-
-    <section class="products-container">
-      <?php
-      for ($i = 0; $i < 5; $i++) {
-        product_template('商品名', "", "../image/sample.png", "商品画像");
-      }
-      ?>
     </section>
   </main>
 </body>
