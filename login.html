@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <linK rel="stylesheet" href="./css/login_page.css">
     <title>Login</title>
+    <script>
+        let url = new URL(window.location.href);
+        let params = url.searchParams;
+        let judge = params.get('error');
+        if(judge=='noUser'){
+            alert('登録されたユーザーではありません');
+        }else if(judge=='fail'){
+            alert('パスワードが間違っています');
+        }
+    </script>
 </head>
 <body>
     こちらは教材用のホームページです。実際のショッピングサイトではないことをご承知ください。
@@ -19,6 +29,6 @@
             <input type="submit" value="login">
         </div>
     </div>
-   </form> 
+   </form>
 </body>
 </html>

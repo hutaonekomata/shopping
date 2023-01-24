@@ -13,9 +13,6 @@
 </head>
 <body>
     <p>------------------------------------------</p>
-    <input type="button" value="add" onclick="myfunc();">
-    <input type="button" value="delete" onclick="myd();">
-    <p>------------------------------------------</p>
     <div id="product-list" class="flex-list">
     </div>
 </body>
