@@ -18,21 +18,20 @@ $stmt = $pdo->prepare($sql_insert);
 $res = $stmt->execute();
 $judge=false;
 
-$json_array = [[]];
+$json_array = [];
 
 if($res){
-   $data=$stmt->fetch();
-   $json_array = $data;
+   $data=$stmt->fetchAll();
+   $json_array = json_encode($data);
 }
 
 $pdo=null;
-exit();
 }catch(PDOException $e){
 echo $e->getMessage();
 }
 ?>
 <script>
-const data = JSON.parse(<?php echo $json_array; ?>);
+const data = <?php echo $json_array; ?>;
 const typeName = ["日常食","薬用","ペット用","釣り用","飼料"];
 
 let myfunc = function(data){
