@@ -1,6 +1,12 @@
 a {
   display: block;
 }
+
+main {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .products-container {
   display: flex;
   flex-direction: row;

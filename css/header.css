@@ -33,6 +33,7 @@ h1 {
 .icon-button {
   background-image: url("../image/虫眼鏡.jpg");
   background-size: contain;
+  background-repeat: no-repeat;
   color: rgba(0, 0, 0, 0);
 }
 .icon {
