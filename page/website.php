@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <?php require_once('./header.php') ?>
+  <?php require_once('../component/header.php') ?>
 </body>
 
 </html>
