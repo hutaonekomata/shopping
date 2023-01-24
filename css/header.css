@@ -1,14 +1,5 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  /* border: solid 1px #000; */
-}
-
 header {
   background-color: rgb(36, 15, 10);
-  /* position: fixed; */
-  /* position: relative; */
 }
 
 .header-contents {
@@ -24,9 +15,10 @@ h1 {
   margin: 0;
 }
 
-.kensaku {
-  display: flex;
-  align-items: center;
+.search-container {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
 }
 
 #search {
@@ -35,7 +27,8 @@ h1 {
 }
 
 .icon-button {
-  width: 40px;
+  background-image: url("../image/虫眼鏡.jpg");
+  background-size: contain;
 }
 .icon {
   width: 40px;
