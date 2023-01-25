@@ -12,6 +12,7 @@
 <body>
   <?php require_once('../component/product_template.php')  ?>
   <?php require_once('../component/header.php')  ?>
+  <?php require_once('../phpFunc/product_get.php') ?>
 
   <main>
     <h2>商品一覧</h2>
@@ -20,8 +21,8 @@
       <!-- phpでsql実行後、とってきた配列から必要な情報を抜き出し、ループで以下のhtmlに埋め込む -->
 
       <?php
-      for ($i = 0; $i < 5; $i++) {
-        product_template('商品名', "http://king-cr.jp/special/seitokai_G/", "../image/sample.png", "商品画像");
+      foreach ($products as $key => $row) {
+        product_template($row);
       }
       ?>
 
