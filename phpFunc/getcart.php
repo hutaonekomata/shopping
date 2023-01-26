@@ -15,11 +15,10 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 // ';
 
 $sql = '
-	select product.name from product inner join cart on product.id = cart.productID;
+	select product.*,cart.num from product inner join cart on product.id = cart.productID where cart.userID=:id;
 ';
 
 $stmt = $pdo->prepare($sql);
-$stmt->bindParam(':email',$email,PDO::PARAM_STR);
 $stmt->bindParam(':id',$userID,PDO::PARAM_STR);
 $res = $stmt->execute();
 if($res){
