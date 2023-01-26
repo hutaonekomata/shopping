@@ -8,7 +8,7 @@ class Product
 	public $price;
 	public $expiration;
 	public $stock;
-	public $explain;
+	public $about;
 	public $from;
 
 	public function __construct($data)
@@ -20,7 +20,7 @@ class Product
 		$this->price = $data['price'];
 		$this->expiration = $data['expiration'];
 		$this->stock = $data['stock'];
-		$this->explain = $data['explain'];
+		$this->about = $data['about'];
 		$this->from = $data['from'];
 	}
 }
