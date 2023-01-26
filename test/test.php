@@ -1,5 +1,7 @@
 <?php
-    include('./../phpFunc/product_get.php');
+    $expiry = time() + 30 * 24 * 3600;
+    setcookie('test_shop','test',$expiry);
+    echo $_COOKIE['test_shop'];
 ?>
 
 <!DOCTYPE html>

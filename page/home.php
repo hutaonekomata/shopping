@@ -10,30 +10,23 @@
 </head>
 
 <body>
-  <?php require_once('./header.php')  ?>
+  <?php require_once('../component/product_template.php')  ?>
+  <?php require_once('../component/header.php')  ?>
 
-  <h2>あなたへのおすすめ</h2>
-  <section class="products-container">
+  <main>
+    <h2>商品一覧</h2>
+    <section class="products-container">
 
-    <!-- phpでsql実行後、とってきた配列から必要な情報を抜き出し、ループで以下のhtmlに埋め込む -->
+      <!-- phpでsql実行後、とってきた配列から必要な情報を抜き出し、ループで以下のhtmlに埋め込む -->
 
-    <div class="product">
-      <a class="product-link" href="./product.php 商品のidとか必要な情報をパラメータで渡す" target="_blank">
-        <img class="product-img" src="../image/sample.png" alt="商品画像">
-        <p>商品名とか</p>
-      </a>
-    </div>
+      <?php
+      for ($i = 0; $i < 5; $i++) {
+        product_template('商品名', "http://king-cr.jp/special/seitokai_G/", "../image/sample.png", "商品画像");
+      }
+      ?>
 
-    <div class="product">
-      <a class="product-link" href="./product.php 商品のidとか必要な情報をパラメータで渡す" target="_blank">
-        <img class="product-img" src="../image/sample.png" alt="商品画像">
-        <p>商品名とか</p>
-      </a>
-    </div>
-
-  </section>
-
-  <!-- <h2>今月の人気ランキング</h2> -->
+    </section>
+  </main>
 </body>
 
 </html>
