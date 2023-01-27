@@ -36,6 +36,9 @@ if($res){
 
 if($judge==true){
     $kigen = time() + 30 * 24 * 3600;
+    if(isset($_COOKIE['session_id'])){
+        setcookie("session_id","",time()-30);
+    }
     setcookie('session_id', $data['id'], $kigen);
     header('Location: https://alumni.hamako-ths.ed.jp/~ei2031/shopping/page/home.php?id='.$_COOKIE['session_id']);
 }else {
