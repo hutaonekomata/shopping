@@ -28,7 +28,7 @@ if($res){
         $stmt->bindParam(':productID',$value['productID'],PDO::PARAM_INT);
         $stmt->bindParam(':id',$userID,PDO::PARAM_INT);
         $stmt->bindParam(':num',$value['num'],PDO::PARAM_INT);
-        $stmt->bindParam(':day',data("Y-m-d"),PDO::PARAM_STR);
+        $stmt->bindParam(':day',date("Y-m-d"),PDO::PARAM_STR);
         $res = $stmt->execute();
     }
 }
