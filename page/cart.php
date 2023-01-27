@@ -26,11 +26,11 @@
 		<h2>カート内の商品</h2>
 
 		<?php
-            // TODO $productsをカート内の商品に変える
-            foreach ($cart_products as $key => $row) {
-                product_template($row);
-            }
-            ?>
+			// TODO $productsをカート内の商品に変える
+			foreach ($cart_products as $key => $row) {
+				product_template($row);
+			}
+			?>
 
 		<section class="products-container">
 		</section>

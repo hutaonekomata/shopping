@@ -21,10 +21,8 @@ try {
         $data = $stmt->fetchAll();
         $cart_list = json_encode($data);
         // $url=$_SERVER['HTTP_REFERER'];
-        // header('Location:'.$url);
     }
     $pdo = null;
-    // exit();
 } catch (PDOException $e) {
     echo $e->getMessage();
 }

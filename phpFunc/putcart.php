@@ -16,7 +16,10 @@ try {
     $pdo = new PDO($pdo_config, $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = 'insert into cart (`productID`,`userID`,`num`,`added`,`updateDate`) values(:productID,:userID,:num,:added,:updateDate);';
+    $sql = '
+insert into cart (`productID`,`userID`,`num`,`added`,`updateDate`) 
+values(:productID,:userID,:num,:added,:updateDate);
+';
 
     $today = date("Y-m-d");
 
@@ -32,6 +35,7 @@ try {
     // $stmt->bindValue(':added',Date());
     // $stmt->bindValue(':updateDate',Date());
     $res = $stmt->execute();
+    var_dump($res);
 
     if ($res) {
         $url = $_SERVER['HTTP_REFERER'];
