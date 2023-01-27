@@ -26,11 +26,6 @@ $stmt->bindParam(':userID',$userID,PDO::PARAM_INT);
 $stmt->bindParam(':num',$num,PDO::PARAM_INT);
 $stmt->bindParam(':added',$today,PDO::PARAM_STR);
 $stmt->bindParam(':updateDate',$today,PDO::PARAM_STR);
-// $stmt->bindValue(':productID',$productID);
-// $stmt->bindValue(':userID',$userID);
-// $stmt->bindValue(':num',$num);
-// $stmt->bindValue(':added',Date());
-// $stmt->bindValue(':updateDate',Date());
 $res = $stmt->execute();
 
 if($res){
