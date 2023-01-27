@@ -10,10 +10,6 @@ try {
     $pdo = new PDO($pdo_config, $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // $sql = '
-    //     update user set `Email`=:email where `id`=:id;
-    // ';
-
     $sql = '
 	select product.*,cart.num from product inner join cart on product.id = cart.productID where cart.userID=:id;
 ';
@@ -22,12 +18,17 @@ try {
     $stmt->bindParam(':id', $userID, PDO::PARAM_STR);
     $res = $stmt->execute();
     if ($res) {
-        $url = $_SERVER['HTTP_REFERER'];
-        $cart_products = $stmt->fetchAll();
-        // header('Location:' . $url);
+        $data = $stmt->fetchAll();
+        $cart_list = json_encode($data);
+        // $url=$_SERVER['HTTP_REFERER'];
+        // header('Location:'.$url);
     }
     $pdo = null;
+    // exit();
 } catch (PDOException $e) {
-
     echo $e->getMessage();
 }
+?>
+<script>
+const data = <?php echo $cart_list; ?>;
+</script>
