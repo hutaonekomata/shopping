@@ -7,36 +7,46 @@ header {
 }
 
 .header-contents {
-  display: flex;
   width: 90%;
+  padding: 3px;
   margin: 0 auto;
+  display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 h1 {
   color: rgb(151, 221, 151);
   font-family: Georgia, "Times New Roman", Times, serif;
   margin: 0;
+  font-size: min(4vw, 50px);
 }
 
-.search-container {
-  padding: 5px;
+.icon-container {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-}
-
-#search {
-  height: 40px;
-  font-size: 90%;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  height: fit-content;
 }
 
 .icon-button {
-  background-image: url("../image/虫眼鏡.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   color: rgba(0, 0, 0, 0);
+  height: 95%;
+  border-radius: 5px;
+  line-height: 400%;
 }
-.icon {
-  width: 40px;
+
+.icon-button-search {
+  background-image: url("../image/虫眼鏡.png");
+}
+
+.icon-button-cart {
+  background-image: url("../image/cart.png");
+}
+
+.icon-button-account {
+  background-image: url("../image/userIcon.png");
 }
