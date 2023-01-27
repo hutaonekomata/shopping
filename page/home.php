@@ -13,7 +13,7 @@
   <?php require_once('../component/product_template.php')  ?>
   <?php require_once('../component/header.php')  ?>
   <?php require_once('../phpFunc/product_get.php') ?>
-
+  
   <main>
     <h2>商品一覧</h2>
     <section class="products-container">

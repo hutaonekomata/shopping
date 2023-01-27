@@ -5,7 +5,8 @@ $productID = $_GET['productID'];
 $num = $_GET['num'];
 
 try {
-    $userID = (int)$_COOKIE['session_id'];
+    session_start();
+    $userID = $_SESSION['session_id'];
     // var_dump($userID);
     $pdo_config = 'mysql:host=localhost;dbname=ei2031';
 

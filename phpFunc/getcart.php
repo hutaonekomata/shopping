@@ -1,6 +1,7 @@
 <?php
 try {
-    $userID = $_COOKIE['session_id'];
+    session_start();
+    $userID = $_SESSION['session_id'];
     $pdo_config = 'mysql:host=localhost;dbname=ei2031';
 
     $user = 'ei2031';
@@ -15,7 +16,7 @@ try {
 ';
 
     $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':id', $userID, PDO::PARAM_STR);
+    $stmt->bindParam(':id', $userID, PDO::PARAM_INT);
     $res = $stmt->execute();
     if ($res) {
         $data = $stmt->fetchAll();

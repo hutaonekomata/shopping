@@ -10,10 +10,15 @@
 </head>
 
 <body>
+  <?php
+    session_start();
+    
+  ?>
   <h2>アカウント</h2>
   <div class="account-main">
 
     <div class="left">
+      <img src="../image/userIcon.png" width="100%">
     </div>
     <form action="./../phpFunc/acountFix.php" method="get">
       <div class="right">
