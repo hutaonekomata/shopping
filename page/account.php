@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="website.css">
+  <link rel="stylesheet" href="./../css/website.css">
   <title>昆虫食専門店ログイン</title>
 </head>
 
@@ -15,7 +15,7 @@
 
     <div class="left">
     </div>
-    <form action="./phpFunc/acountFix.php" method="get">
+    <form action="./../phpFunc/acountFix.php" method="get">
       <div class="right">
         アカウント名<br>
         <input type="text" id="name" name="name"><br><br><br>

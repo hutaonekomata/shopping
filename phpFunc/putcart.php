@@ -29,13 +29,7 @@ values(:productID,:userID,:num,:added,:updateDate);
     $stmt->bindParam(':num', $num, PDO::PARAM_INT);
     $stmt->bindParam(':added', $today, PDO::PARAM_STR);
     $stmt->bindParam(':updateDate', $today, PDO::PARAM_STR);
-    // $stmt->bindValue(':productID',$productID);
-    // $stmt->bindValue(':userID',$userID);
-    // $stmt->bindValue(':num',$num);
-    // $stmt->bindValue(':added',Date());
-    // $stmt->bindValue(':updateDate',Date());
     $res = $stmt->execute();
-    var_dump($res);
 
     if ($res) {
         $url = $_SERVER['HTTP_REFERER'];
