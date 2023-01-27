@@ -85,7 +85,7 @@ $types = [
 				</div>
 				<form action="../phpFunc/putcart.php" method="get">
 					<h3>&yen;<?= $price ?></h3>
-					<input type="number" name="num" placeholder="個数" min="1" />
+					<input type="number" name="num" placeholder="個数" min="1" max="<?php echo $stock;?>"/>
 					<input type="hidden" name="productID" value="<?= $id ?>" />
 					<button type="submit">カートに入れる</button>
 				</form>
