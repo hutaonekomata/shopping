@@ -33,7 +33,7 @@ article {
 form {
   display: flex;
   flex-direction: column;
-  width: min-content;
+  /* width: min-content; */
 }
 
 .details-container {
