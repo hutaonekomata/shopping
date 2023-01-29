@@ -1,4 +1,5 @@
 <?php
+session_start();
 $email=$_GET['email'];
 $pass=$_GET['password'];
 
@@ -35,9 +36,8 @@ if($res){
 }
 
 if($judge==true){
-    $kigen = time() + 30 * 24 * 3600;
-    setcookie('session_id', $data['id'], $kigen);
-    header('Location: https://alumni.hamako-ths.ed.jp/~ei2031/shopping/page/home.php?id='.$_COOKIE['session_id']);
+    $_SESSION['session_id']=$data['id'];
+    header('Location: https://alumni.hamako-ths.ed.jp/~ei2031/shopping/page/home.php?id='.$_SESSION['session_id']);
 }else {
     $alert = "<script type='text/javascript'>alert('登録されたユーザーではありません');</script>";
     echo $alert;

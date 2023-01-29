@@ -12,7 +12,9 @@
 <body>
 	<?php require_once('../component/product_template.php')  ?>
 	<?php require_once('../component/header.php')  ?>
-	<?php require_once('../phpFunc/getcart.php') ?>
+	<?php require_once('../phpFunc/getcart.php');
+	$cart_products = $data;
+	?>
 
 	<main>
 
@@ -25,6 +27,9 @@
 
 		<h2>カート内の商品</h2>
 
+		<form action="../phpFunc/sold.php" method="get">
+			<input type="submit" value="購入">
+		</from>
 		<?php
 			// TODO $productsをカート内の商品に変える
 			foreach ($cart_products as $key => $row) {
@@ -34,7 +39,6 @@
 
 		<section class="products-container">
 		</section>
-
 		<?php endif ?>
 
 

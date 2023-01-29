@@ -89,12 +89,11 @@ if ($isError) {
                     </ul>
                 </section>
 
-
                 <section class="price-container">
                     <h3 class="price">&yen;<?= $price ?></h3>
 
                     <form action="../phpFunc/putcart.php" method="get">
-                        <input type="number" name="num" placeholder="個数" min="1" required />
+                        <input type="number" name="num" placeholder="個数" min="1" max=<?= $stock ?> required />
                         <input type="hidden" name="productID" value="<?= $id ?>" />
                         <button
                             class="buy-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--red"
