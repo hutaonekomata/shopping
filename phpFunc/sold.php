@@ -24,6 +24,9 @@ if($res){
     $sql = '
         insert into sales(productID,userID,num,sold) values(:productID,:id,:num,:day);
     ';
+    $sql_update='
+        update product set stock=stock-:stock where id=:id;
+    ';
     foreach($data as $value){
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':productID',$value['productID'],PDO::PARAM_INT);
@@ -31,6 +34,10 @@ if($res){
         $stmt->bindParam(':num',$value['num'],PDO::PARAM_INT);
         $stmt->bindParam(':day',date("Y-m-d"),PDO::PARAM_STR);
         $res = $stmt->execute();
+        $stmt = $pdo->prepare($sql_update);
+        $stmt->bindParam(':stock',$value['num'],PDO::PARAM_INT);
+        $stmt->bindParam(':id',$value['productID'],PDO::PARAM_INT);
+        $stmt->execute();
     }
 }
 // delete section
