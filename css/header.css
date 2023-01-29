@@ -23,10 +23,9 @@ h1 {
 }
 
 .icon-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  height: fit-content;
 }
 
 .icon-button {
@@ -37,6 +36,7 @@ h1 {
   height: 95%;
   border-radius: 5px;
   line-height: 400%;
+  margin: 0 2.5px;
 }
 
 .icon-button-search {

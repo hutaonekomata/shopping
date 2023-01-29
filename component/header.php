@@ -6,35 +6,34 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script src="../css/mdl/material.min.js"></script>
 
-
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/header.css">
 <header>
-	<div class="header-contents">
-		<a href="./home.php">
-			<h1 class="title">
-				昆虫食専門店(仮)
-			</h1>
-		</a>
+    <div class="header-contents">
+        <a href="./home.php">
+            <h1 class="title">
+                昆虫食専門店(仮)
+            </h1>
+        </a>
 
-		<div class="icon-container">
-			<div></div>
+        <div class="icon-container">
+            <div></div>
 
-			<a href="../page/cart.php">
-				<button
-					class="icon-button icon-button-cart mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--white">
-					カート
-				</button>
-			</a>
+            <a href="../page/cart.php">
+                <button
+                    class="icon-button icon-button-cart mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--white">
+                    1
+                </button>
+            </a>
 
-			<a href="../account.html">
-				<button
-					class="icon-button icon-button-account mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--white">
-					アカウント
-				</button>
-			</a>
+            <a href="../page/account.php">
+                <button
+                    class="icon-button icon-button-account mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--white">
+                    1
+                </button>
+            </a>
 
-		</div>
+        </div>
 
-	</div>
+    </div>
 </header>

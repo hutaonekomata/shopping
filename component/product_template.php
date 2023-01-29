@@ -1,23 +1,25 @@
 <?php
 function product_template($row)
 {
-	$id = $row['id'];
-	// $link = "https://alumni.hamako-ths.ed.jp/~ei2031/shopping/page/product.php?id=$id";
-	$image_src = "../image/$id.png";
-	$product_name = $row['name'];
+    $id = $row['id'];
+    // $link = "https://alumni.hamako-ths.ed.jp/~ei2031/shopping/page/product.php?id=$id";
+    $image_src = "../image/$id.png";
+    $product_name = $row['name'];
 ?>
 
-<div class="product">
-	<a class="product-link" href="../page/product.php?id=<?= $id ?>" target="_blank">
-		<div>
+<a class="product-link" href="../page/product.php?id=<?= $id ?>" target="_blank">
 
-			<img class="product-img" src="<?= $image_src ?>" alt="<?= $product_name ?>">
-		</div>
-		<div>
-			<p class="product-title"><?= $product_name ?></p>
-		</div>
-	</a>
-</div>
+    <div class="product-title-container">
+        <p class="product-title"><?= $product_name ?></p>
+    </div>
+
+    <div class="product">
+        <!-- <div> -->
+        <img class="product-img" src="<?= $image_src ?>" alt="<?= $product_name ?>">
+        <!-- </div> -->
+    </div>
+
+</a>
 
 <?php
 }
