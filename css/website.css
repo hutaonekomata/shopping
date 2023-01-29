@@ -19,7 +19,7 @@ h1 {
   width: 30%;
 }
 
-h2{
+h2 {
   height: 100px;
   display: grid;
   place-items: center;
@@ -30,12 +30,12 @@ h2{
   align-items: center;
 }
 
-.account-main{
+.account-main {
   display: flex;
   justify-content: space-evenly;
 }
 
-.left{
+.left {
   height: 300px;
   width: 300px;
   margin: 3%;
@@ -45,17 +45,19 @@ h2{
   border: 5px solid rgb(36, 15, 10);
 }
 
-.right{
+.right {
   width: 75%;
   margin: 3%;
 }
-.right input{
+
+.right input {
   height: 50px;
   width: 100%;
   border: 5px solid rgb(36, 15, 10);
   font-size: 20px;
 }
-.right button{
+
+.right button {
   position: fixed;
   right: 10%;
   height: 40px;
@@ -73,6 +75,7 @@ h2{
 .icon-button {
   width: 40px;
 }
+
 .icon {
   width: 40px;
 }
